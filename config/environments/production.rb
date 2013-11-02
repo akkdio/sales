@@ -25,6 +25,30 @@ Sales::Application.configure do
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass
+  
+  #sales app configs
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:         'smtp.mandrillapp.com',
+    port:            587,
+    user_name:       ENV['MANDRILL_USERNAME'],
+    password:        ENV['MANDRILL_APIKEY'],
+    domain:          'heroku.com',
+    authentication:  :plain
+  }
+  
+  config.action_mailer.default_url_options = {
+    :host => 'morning-earth-2357.herokuapp.com'   
+  }
+  
+  config.paperclip_defaults = {
+    storage: :s3,
+    s3_credentials: {
+      bucket:            ENV['AWS_BUCKET'],
+      access_key_id:     ENV['AWS_ACCESS_KEY_ID'],
+      secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'] 
+    }
+  }
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
