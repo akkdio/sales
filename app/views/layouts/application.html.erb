@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<% fash.each do |type, msg| %>
+<% flash.each do |type, msg| %>
 <%= content_tag :p, msg, class: type %>
 <% end %>
 
