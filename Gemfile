@@ -20,6 +20,16 @@ gem 'paperclip', '~> 3.5.1'
 
 gem 'aws-sdk'
 
+gem 'stripe', '~> 1.8.3'
+
+gem 'httparty'
+
+group :development do
+  gem 'mocha', require: false
+  gem 'database_cleaner'
+end
+
+ 
 gem 'coffee-rails', '~> 4.0.0'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
