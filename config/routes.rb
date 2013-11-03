@@ -8,7 +8,7 @@ Sales::Application.routes.draw do
   root :to =>'products#index'
   
   get '/buy/:permalink', to: 'payments#new',      as: :show_buy
-  post '/buy/permalink', to: 'payments#create',   as: :buy
+  post '/buy/:permalink', to: 'payments#create',   as: :buy
   get  '/pickup/:guid',  to: 'payments#show',     as: :pickup
   get '/download/:guid', to: 'payments#download', as: :download
   
