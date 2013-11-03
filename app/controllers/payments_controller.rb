@@ -13,7 +13,7 @@ class PaymentsController < ApplicationController
   end
   
   def create
-    product = Product.find_by!(permalink: parmas[:permalink])
+    product = Product.find_by!(permalink: params[:permalink])
   
     token = params[:stripeToken]
     
