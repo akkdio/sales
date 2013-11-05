@@ -9,7 +9,7 @@ Sales::Application.routes.draw do
   
   get '/buy/:permalink', to: 'payments#new',      as: :show_buy
   post '/buy/:permalink', to: 'payments#create',   as: :buy
-  get  '/pickup/:guid',  to: 'payments#show',     as: :pickup
+  get  '/pickup/:guid',  to: 'payments#pickup',     as: :pickup
   get '/download/:guid', to: 'payments#download', as: :download
   
   

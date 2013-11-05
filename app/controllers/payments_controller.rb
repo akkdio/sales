@@ -7,7 +7,7 @@ class PaymentsController < ApplicationController
     @product = Product.find_by!(permalink: params[:permalink])
   end
   
-  def show
+  def pickup
     @sale = Sale.find_by!(guid: params[:guid])
     @product = @sale.product
   end
