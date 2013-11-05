@@ -50,6 +50,9 @@ Sales::Application.configure do
     }
   }
 
+  # SSL
+  config.force_ssl = true
+
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
 
