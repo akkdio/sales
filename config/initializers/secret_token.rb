@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Sales::Application.config.secret_key_base = 'bdbb224ac2ad354aa0821d8824e66d6862e583270a4672567efa057d5185226e60c2d0bd58de86306b95f70f381760f25a626bd0c9527e7961e2331660fc3cc3'
+Sales::Application.config.secret_key_base = ENV['SECRET_KEY_BASE']

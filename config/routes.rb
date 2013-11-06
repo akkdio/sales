@@ -1,19 +1,19 @@
 Sales::Application.routes.draw do
-  
+
   resources :sales
 
   resources :products
 
   devise_for :users
   root :to =>'products#index'
-  
+
   get '/buy/:permalink', to: 'payments#new',      as: :show_buy
   post '/buy/:permalink', to: 'payments#create',   as: :buy
   get  '/pickup/:guid',  to: 'payments#pickup',     as: :pickup
   get '/download/:guid', to: 'payments#download', as: :download
-  
-  
-  
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

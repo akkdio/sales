@@ -31,7 +31,7 @@ class SalesController < ApplicationController
         format.html { redirect_to @sale, notice: 'Sale was successfully created.' }
         format.json { render action: 'show', status: :created, location: @sale }
       else
-        format.html { render action: 'new' }
+        format.html { render 'new' }
         format.json { render json: @sale.errors, status: :unprocessable_entity }
       end
     end
@@ -45,7 +45,7 @@ class SalesController < ApplicationController
         format.html { redirect_to @sale, notice: 'Sale was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: 'edit' }
+        format.html { render 'edit' }
         format.json { render json: @sale.errors, status: :unprocessable_entity }
       end
     end

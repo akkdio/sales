@@ -24,12 +24,15 @@ gem 'stripe', '~> 1.8.3'
 
 gem 'httparty'
 
+gem 'brakeman'
+
 group :development do
   gem 'mocha', require: false
   gem 'database_cleaner'
+  gem 'rails_best_practices'
 end
 
- 
+
 gem 'coffee-rails', '~> 4.0.0'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes

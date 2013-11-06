@@ -33,7 +33,7 @@ class ProductsController < ApplicationController
         format.html { redirect_to @product, notice: 'Product was successfully created.' }
         format.json { render action: 'show', status: :created, location: @product }
       else
-        format.html { render action: 'new' }
+        format.html { render 'new' }
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end
     end
@@ -47,7 +47,7 @@ class ProductsController < ApplicationController
         format.html { redirect_to @product, notice: 'Product was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: 'edit' }
+        format.html { render 'edit' }
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end
     end

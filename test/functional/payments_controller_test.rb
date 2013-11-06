@@ -21,7 +21,7 @@ class PaymentsControllerTest < ActionController::TestCase
       
     }).return(mock)
     
-    post :create, email:, stripeToken: token
+    post :create, email: stripeToken: token
     
     assert_not_nil assigns(:sale)
     assert_equal product.id, assigns(:sale).product_id
