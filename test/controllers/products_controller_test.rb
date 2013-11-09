@@ -1,5 +1,7 @@
 require 'test_helper'
 
+ include Devise::TestHelpers
+
 class ProductsControllerTest < ActionController::TestCase
   setup do
     @product = products(:one)

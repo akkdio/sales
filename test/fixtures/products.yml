@@ -1,15 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  name: MyString
-  permalink: MyString
+  name: akkdio
+  permalink: akkdio
   description: MyText
-  price: 1
+  price: 1000
   user_id: 
+     
 
 two:
   name: MyString
   permalink: MyString
   description: MyText
-  price: 1
+  price: 500
   user_id: 
+      

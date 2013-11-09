@@ -1,5 +1,7 @@
 require 'test_helper'
 
+
+
 class SalesControllerTest < ActionController::TestCase
   setup do
     @sale = sales(:one)

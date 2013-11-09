@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  email: MyString
+  email: MyString1
   guid: MyString
   product_id: 
 
 two:
-  email: MyString
+  email: MyString2
   guid: MyString
   product_id: 

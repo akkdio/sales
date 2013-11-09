@@ -32,6 +32,9 @@ group :development do
   gem 'rails_best_practices'
 end
 
+group :test do
+  gem "minitest", "~> 4.7"
+end
 
 gem 'coffee-rails', '~> 4.0.0'
 

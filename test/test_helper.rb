@@ -1,13 +1,14 @@
 ENV["RAILS_ENV"] ||= "test"
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
+require "minitest/spec"
 require 'database_cleaner'
 
 
 class ActiveSupport::TestCase
   ActiveRecord::Migration.check_pending!
   setup do
-    DatabseCleaner.start
+    DatabaseCleaner.start
   end
   
   teardown do 
@@ -19,7 +20,12 @@ class ActiveSupport::TestCase
   # Note: You'll currently still have to declare fixtures explicitly in integration tests
   # -- they do not yet inherit this setting
   fixtures :all
-
+   
+  extend MiniTest::Spec::DSL
+  
+  register_spec_type self do |desc|
+    desc < ActiveRecord::Base if desc.is_a? Class
+  end
   # Add more helper methods to be used by all tests here...
 end
 

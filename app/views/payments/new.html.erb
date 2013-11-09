@@ -27,7 +27,7 @@
         <label class="control-label">Exp (MM/YYYY)</label>
         <input style="width: 2em" type="text" size="2" id="exp-month" data-stripe="exp-month" placeholder="MM" pattern="\d*">
         <span> / </span>
-        <input style="width: 3em" type="text" size="4" id="exp-year" data-strip="exp-year" placeholder="YYYY" pattern="\d*"/>
+        <input style="width: 3em" type="text" size="4" id="exp-year" data-stripe="exp-year" placeholder="YYYY" pattern="\d*"/>
       </div><!-- end of style div> -->  
     </div><!-- end of row div> -->
     
@@ -44,9 +44,12 @@
 
 
 <script type="text/javascript">
+
   Stripe.setPublishableKey('<%=Rails.configuration.stripe[:publishable_key]%>');
+  
  var stripeResponseHandler = function(status, response) {
    var $form = $('#payment-form');
+   
    if (response.error) {
       $form.find('.payment_errors').text(response.error.message);
       $form.find('button').prop('disabled', false);
