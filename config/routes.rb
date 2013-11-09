@@ -11,7 +11,9 @@ Sales::Application.routes.draw do
   post '/buy/:permalink', to: 'payments#create',   as: :buy
   get  '/pickup/:guid',  to: 'payments#pickup',     as: :pickup
   get '/download/:guid', to: 'payments#download', as: :download
-
+  
+  match '/iframe/:permalink' => 'payments#iframe', via: :get, as: :buy_iframe
+  
 
 
   # The priority is based upon order of creation: first created -> highest priority.
