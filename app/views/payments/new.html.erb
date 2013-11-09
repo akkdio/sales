@@ -45,10 +45,7 @@
    $(function(){
   Stripe.setPublishableKey('<%=Rails.configuration.stripe[:publishable_key]%>');
    });
-   </script>
-   
-   
-     <script>
+  
 
       $('#payment-form').submit(function(event) {
       var form = $(this);
