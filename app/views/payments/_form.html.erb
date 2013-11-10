@@ -1,4 +1,4 @@
-<div class="well" style="margin-left: 0px; position:relative; min-width:650px; min-height: 180px; max-height: 180px">
+<div class="well" style="margin-left: 0px; position:relative; min-width:500px; min-height: 180px; max-height: 180px">
   <%= form_tag buy_path(permalink: @product.permalink), :class => '', :id => 'payment-form' do %>
     
     <div class="row">
@@ -7,12 +7,12 @@
     <div class="row">
       <div style="position: absolute; left: 20px">
           <label class="control-label" for="email">Email</label>
-          <input type="email" name="email" id="email" placeholder="you@example.com" style="width: 25em"/>
+          <input type="email" name="email" id="email" placeholder="you@example.com" style="width: 15em"/>
       </div> <!-- end of style div> -->
         
-      <div style="position: absolute; left: 400px">
+      <div style="position: absolute; left: 250px">
           <label class="control-label" for="number">Card Number</label>
-          <input type="text" size="20" data-stripe="number" id="number" placeholder="**** **** **** ****" pattern="[\d ]*" style="width: 18em"/>
+          <input type="text" size="20" data-stripe="number" id="number" placeholder="**** **** **** ****" pattern="[\d ]*" style="width: 15em"/>
        </div><!-- end of style div> -->
     </div><!-- end of row div> -->
     
@@ -32,11 +32,45 @@
     </div><!-- end of row div> -->
     
     <div class="row" style="margin-top: 70px">
-      <div class="price" style="position: absolute; left: 300px"><%= @product.price %></div>
-      <div style="position: absolute; left: 400px">
+      <div class="price" style="position: absolute; left:250px"><%= @product.price %></div>
+      <div style="position: absolute; left: 300px">
         <button type="submit" class="btn btn-primary btn-large">Buy Now</button>
         <img style="display: none;" src="/img/well_spinner.gif" id="spinner">
         </div><!-- end of style div> -->  
     </div> <!-- end of row div> -->
     <% end %>
   </div>  <!-- end of well div> -->
+  
+  <script type="text/javascript">
+    $(function(){
+   Stripe.setPublishableKey('<%=Rails.configuration.stripe[:publishable_key]%>');
+    });
+
+
+       $('#payment-form').submit(function(event) {
+       var form = $(this);
+       form.find('button').prop('disabled', true);
+       Stripe.createToken(form, stripeResponseHandler);
+       return false;
+       });
+
+       </script>
+
+    <script type="text/javascript">
+
+     function stripeResponseHandler(status, response) {
+     var form = $('#payment-form');
+     if (response.error) {
+     form.find('.payment-errors').text(response.error.message);
+     form.find('button').prop('disabled', false);
+     } else {
+     var token = response.id;
+     form.append($('<input type="hidden" name="stripeToken">').val(token));
+     form.get(0).submit();
+     }
+     }
+     </script>
+
+
+
+    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
