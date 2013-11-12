@@ -15,10 +15,29 @@ class PaymentsController < ApplicationController
   end
   
   def create
-    product = Product.find_by!(permalink: params[:permalink])
-  
-    token = params[:stripeToken]
+    @product = Product.find_by!(permalink: params[:permalink])
     
+    
+    
+    sale = Sale.create(
+    product_id: @product.id,
+    amount:     @product.price,
+    email:      params[:email],
+    stripe_token: params[:stripeToken]
+    )
+    
+    sale.process!
+    
+    if sale.finished?
+      redirect_to pickup_url(guid: sale.guid)
+    else
+      flash.now[:alert] = sale.error
+      render :new
+    end
+  end
+    
+=begin rdoc    
+   this is the code before adding of the state machine: 
     begin
       charge = Stripe::Charge.create(
       amount:      product.price,
@@ -40,7 +59,7 @@ class PaymentsController < ApplicationController
        render :new
      end
    end
-   
+=end    
    
    def download 
      @sale = Sale.find_by!(guid: params[:guid])

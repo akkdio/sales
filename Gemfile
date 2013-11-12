@@ -26,6 +26,8 @@ gem 'httparty'
 
 gem 'brakeman'
 
+gem 'aasm'
+
 group :development do
   gem 'mocha', require: false
   gem 'database_cleaner'

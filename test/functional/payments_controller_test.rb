@@ -20,7 +20,7 @@ class PaymentsControllerTest < ActionController::TestCase
       amount: 100,
       currency: 'usd',
       card:     token,
-      description: email
+      description: email,
       
     }).returns(mock)
     
