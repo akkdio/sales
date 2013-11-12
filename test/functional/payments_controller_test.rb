@@ -1,3 +1,5 @@
+require 'test_helper'
+
 class PaymentsControllerTest < ActionController::TestCase
   
   setup do
@@ -7,6 +9,7 @@ class PaymentsControllerTest < ActionController::TestCase
   test "should post create" do
     token = 'tok_123456'
     email = 'foo@example.com'
+    guid = 123456
     
     product = Product.create(
     permalink: 'test_product',
@@ -19,9 +22,9 @@ class PaymentsControllerTest < ActionController::TestCase
       card:     token,
       description: email
       
-    }).return(mock)
+    }).returns(mock)
     
-    post :create, email: stripeToken: token
+    post :create, email: email, stripeToken: token
     
     assert_not_nil assigns(:sale)
     assert_equal product.id, assigns(:sale).product_id

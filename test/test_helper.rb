@@ -1,8 +1,11 @@
 ENV["RAILS_ENV"] ||= "test"
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
-require "minitest/spec"
+#require 'minitest/rails'
 require 'database_cleaner'
+require 'capybara/rails'
+require 'capybara/rspec/matchers'
+require 'minitest/rails/capybara'
 
 
 class ActiveSupport::TestCase
@@ -21,11 +24,13 @@ class ActiveSupport::TestCase
   # -- they do not yet inherit this setting
   fixtures :all
    
-  extend MiniTest::Spec::DSL
+  #extend MiniTest::Spec::DSL
   
-  register_spec_type self do |desc|
-    desc < ActiveRecord::Base if desc.is_a? Class
-  end
+  #recommended by http://blowmage.com/2013/07/08/minitest-spec-rails4
+  
+  #register_spec_type self do |desc|
+   # desc < ActiveRecord::Base if desc.is_a? Class
+  #end
   # Add more helper methods to be used by all tests here...
 end
 

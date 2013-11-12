@@ -34,6 +34,7 @@ end
 
 group :test do
   gem "minitest", "~> 4.7"
+  gem "minitest-rails-capybara"
 end
 
 gem 'coffee-rails', '~> 4.0.0'

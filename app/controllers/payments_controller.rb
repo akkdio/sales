@@ -31,8 +31,9 @@ class PaymentsController < ApplicationController
        product_id: product.id,
        email:       params[:email]
        )
-       
-       redirect_to pickup_url(guid: @sale.guid)
+              
+       #redirect_to pickup_url(guid: @sale.guid)
+       #redirect_to root_url
      rescue Stripe::CardError => e
        #the card has been declined or some other occured
        @error = e
