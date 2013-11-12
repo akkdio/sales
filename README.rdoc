@@ -1,23 +1,27 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is just a test app as I try to learn stripe by using the book "Mastering Modern Payments" by Pete Keen. 
+I cannot recommend the book as I have not been though it entirely and am having a bit of trouble on the way.  
+There are some typos in the book (I am using version 1.41) and I will try to document them as I go. 
 
 Things you may want to cover:
 
 * Ruby version
+version 2.0
 
 * System dependencies
 
 * Configuration
 
 * Database creation
+using pg
 
 * Database initialization
 
 * How to run the test suite
+I am not so great at tests and am using mini-test
 
-* Services (job queues, cache servers, search engines, etc.)
+
 
 * Deployment instructions
 
