@@ -28,6 +28,8 @@ gem 'brakeman'
 
 gem 'aasm'
 
+
+gem 'paper_trail', '~> 3.0.0.beta', git: 'git://github.com/airblade/paper_trail.git'
 group :development do
   gem 'mocha', require: false
   gem 'database_cleaner'

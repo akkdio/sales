@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/airblade/paper_trail.git
+  revision: 7c9f9b8953f76dd046fbcbfab1a933853f99e87b
+  specs:
+    paper_trail (3.0.0.rc1)
+      activerecord (>= 3.0, < 5.0)
+      activesupport (>= 3.0, < 5.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -221,6 +229,7 @@ DEPENDENCIES
   minitest (~> 4.7)
   minitest-rails-capybara
   mocha
+  paper_trail (~> 3.0.0.beta)!
   paperclip (~> 3.5.1)
   pg
   rails (= 4.0.0)

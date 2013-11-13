@@ -14,7 +14,7 @@ version 2.0
 * Configuration
 
 * Database creation
-using pg
+using pg 
 
 * Database initialization
 
@@ -24,9 +24,7 @@ I am not so great at tests and am using mini-test
 
 
 * Deployment instructions
+none
 
-* ...
 
-
-Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.

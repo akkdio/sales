@@ -1,12 +1,13 @@
 class Sale < ActiveRecord::Base
-  
+   has_paper_trail
+   
   include AASM
   
   belongs_to :product
 
   before_create :populate_guid
   
-  
+ 
   
   aasm column: 'state' do
     state :pending, initial: true
