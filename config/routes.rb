@@ -3,6 +3,8 @@ Sales::Application.routes.draw do
   resources :sales
 
   resources :products
+  
+  resources: :stripe_events, only: [:create]
 
   devise_for :users
   root :to =>'products#index'
