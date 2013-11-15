@@ -29,4 +29,16 @@ class StripeEventsController < ApplicationController
     end
   end
   
+  
+  def stripe_charge_dispute_created(charge)
+    StripeMailer.admin_dispute_created(charge).send
+  end
+  
+  
+  def stripe_charge_succeeded(charge)
+    StripeMailer.receipt(charge).send
+    StripeMailer.admin_charge_succeeded(charge).send
+  end
+  
+  
 end
