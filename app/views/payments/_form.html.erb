@@ -1,31 +1,31 @@
-<div class="well" style="margin-left: 0px; position:relative; min-width:500px; min-height: 180px; max-height: 180px">
+<div class="well">
   <%= form_tag buy_path(permalink: @product.permalink), :class => '', :id => 'payment-form' do %>
     
     <div class="row">
       </div>
      
     <div class="row">
-      <div style="position: absolute; left: 20px">
+      <div class="email">
           <label class="control-label" for="email">Email</label>
-          <input type="email" name="email" id="email" placeholder="you@example.com" style="width: 15em"/>
-      </div> <!-- end of style div> -->
+          <input type="email" name="email" id="email" placeholder="you@example.com"/>
+      </div> <!-- end of email div> -->
         
-      <div style="position: absolute; left: 250px">
+      <div class="card_number">
           <label class="control-label" for="number">Card Number</label>
-          <input type="text" size="20" data-stripe="number" id="number" placeholder="**** **** **** ****" pattern="[\d ]*" style="width: 15em"/>
-       </div><!-- end of style div> -->
+          <input type="text" size="20" data-stripe="number" id="number" placeholder="**** **** **** ****" pattern="[\d ]*"/>
+       </div><!-- end of card_number div> -->
     </div><!-- end of row div> -->
     
     <div class="row" style="margin-top: 65px">
-      <div style="position: absolute; left: 20px">
+      <div class="cvc">
         <label class="control-label" for="cvc">CVC</label>
         <input type="text" style="width: 3em" size="3" data-stripe="cvc" id="cvc" placeholder="***" pattern="\d*"/>
        <div id="card_image"> <%= image_tag("credit.png") %></div>
-      </div><!-- end of style div> -->
+      </div><!-- end of cvc div> -->
         
-      <div style="position: absolute; left: 170px">
+      <div class="exp">
         <label class="control-label">Exp (MM/YYYY)</label>
-        <input style="width: 2em" type="text" size="2" id="exp-month" data-stripe="exp-month" placeholder="MM" pattern="\d*">
+        <input type="text" style="width: 3em" size="2" id="exp-month" data-stripe="exp-month" placeholder="MM" pattern="\d*">
         <span> / </span>
         <input style="width: 3em" type="text" size="4" id="exp-year" data-stripe="exp-year" placeholder="YYYY" pattern="\d*"/>
       </div><!-- end of style div> -->  

@@ -1,0 +1,43 @@
+
+.well {
+margin-left: 0px; 
+position:relative; 
+min-width:500px; 
+height: 180px;
+	
+	
+}
+
+#card_image {
+height: 30px; 
+padding-left: 7px; 
+margin-top:-10px;
+display:inline;
+	
+}
+
+.email {
+position: absolute; 
+left: 20px;
+width: 15em;
+}
+
+.card_number {
+position: absolute; 
+left: 250px;
+width: 15em;
+}
+
+.cvc  {
+position: absolute; 
+left: 20px;
+
+display:inline;
+	
+}
+
+.exp {
+position:absolute;
+left: 170px;
+	
+}
