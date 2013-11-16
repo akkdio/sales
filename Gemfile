@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+#gem ruby '2.0.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
@@ -60,6 +61,12 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+
+group :production do
+  #gem "unicorn", "~> 4.7.0" # make sure you follow installation instructions for this gem
+  gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'
+  gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
+end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
