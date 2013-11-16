@@ -20,10 +20,10 @@
       <div style="position: absolute; left: 20px">
         <label class="control-label" for="cvc">CVC</label>
         <input type="text" style="width: 3em" size="3" data-stripe="cvc" id="cvc" placeholder="***" pattern="\d*"/>
-        <img id="card-image" src="/img/credit.png" style="height: 30px; padding-left: 10px; margin-top:-10px">
+       <div id="card_image"> <%= image_tag("credit.png") %></div>
       </div><!-- end of style div> -->
         
-      <div style="position: absolute; left: 150px">
+      <div style="position: absolute; left: 170px">
         <label class="control-label">Exp (MM/YYYY)</label>
         <input style="width: 2em" type="text" size="2" id="exp-month" data-stripe="exp-month" placeholder="MM" pattern="\d*">
         <span> / </span>
@@ -31,11 +31,11 @@
       </div><!-- end of style div> -->  
     </div><!-- end of row div> -->
     
-    <div class="row" style="margin-top: 70px">
-      <div class="price" style="position: absolute; left:250px"><%= @product.price %></div>
-      <div style="position: absolute; left: 300px">
+    <div class="row" style="margin-top: 15px">
+      <div class="price" style="position: absolute; left:300px"><%= @product.price %></div>
+      <div style="position: absolute; left: 350px">
         <button type="submit" class="btn btn-primary btn-large">Buy Now</button>
-        <img style="display: none;" src="/img/well_spinner.gif" id="spinner">
+        
         </div><!-- end of style div> -->  
     </div> <!-- end of row div> -->
     <% end %>

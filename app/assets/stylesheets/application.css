@@ -11,3 +11,11 @@
  *= require_self
  *= require_tree .
  */
+
+#card_image {
+height: 30px; 
+padding-left: 7px; 
+margin-top:-10px;
+display:inline;
+	
+}
